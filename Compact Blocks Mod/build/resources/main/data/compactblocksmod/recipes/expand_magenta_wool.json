@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_magenta_wool"
+        }
+    ],
+    "result": {
+        "item": "minecraft:magenta_wool",
+        "count": 9
+    },
+    "group": "expand wool"
+
+}

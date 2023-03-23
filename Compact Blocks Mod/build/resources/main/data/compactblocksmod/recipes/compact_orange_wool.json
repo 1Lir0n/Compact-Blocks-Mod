@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:orange_wool"
+        }
+    },
+    "result": {
+        "item": "compactblocksmod:compact_orange_wool"
+    },
+    "group": "compact wool"
+}

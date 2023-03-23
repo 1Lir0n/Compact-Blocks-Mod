@@ -1,0 +1,22 @@
+{
+    "block.compactblocksmod.compactor_block":"Compactor",
+    
+	"block.compactblocksmod.compact_white_wool":"Compact White Wool",
+	"block.compactblocksmod.compact_black_wool":"Compact Black Wool",
+	"block.compactblocksmod.compact_blue_wool":"Compact Blue Wool",
+	"block.compactblocksmod.compact_brown_wool":"Compact Brown Wool",
+	"block.compactblocksmod.compact_cyan_wool":"Compact Cyan Wool",
+	"block.compactblocksmod.compact_gray_wool":"Compact Gray Wool",
+	"block.compactblocksmod.compact_green_wool":"Compact Green Wool",
+	"block.compactblocksmod.compact_light_blue_wool":"Compact Light Blue Wool",
+	"block.compactblocksmod.compact_light_gray_wool":"Compact Light Gray Wool",
+	"block.compactblocksmod.compact_lime_wool":"Compact Lime Wool",
+	"block.compactblocksmod.compact_magenta_wool":"Compact Magenta Wool",
+	"block.compactblocksmod.compact_orange_wool":"Compact Orange Wool",
+	"block.compactblocksmod.compact_pink_wool":"Compact Pink Wool",
+	"block.compactblocksmod.compact_purple_wool":"Compact Purple Wool",
+	"block.compactblocksmod.compact_red_wool":"Compact Red Wool",
+	"block.compactblocksmod.compact_yellow_wool":"Compact Yellow Wool",
+
+	"itemGroup.compactblocksmod.compactblocks": "Compact Blocks"
+}

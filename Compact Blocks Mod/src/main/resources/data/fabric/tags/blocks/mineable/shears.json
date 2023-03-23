@@ -1,0 +1,22 @@
+{
+	"replace": false,
+    "values": [
+    	"compactblocksmod:compact_white_wool",
+    	"compactblocksmod:compact_black_wool",
+    	"compactblocksmod:compact_blue_wool",
+    	"compactblocksmod:compact_brown_wool",
+    	"compactblocksmod:compact_cyan_wool",
+    	"compactblocksmod:compact_gray_wool",
+    	"compactblocksmod:compact_green_wool",
+    	"compactblocksmod:compact_light_blue_wool",
+    	"compactblocksmod:compact_light_gray_wool",
+    	"compactblocksmod:compact_lime_wool",
+    	"compactblocksmod:compact_magenta_wool",
+    	"compactblocksmod:compact_orange_wool",
+    	"compactblocksmod:compact_pink_wool",
+    	"compactblocksmod:compact_purple_wool",
+    	"compactblocksmod:compact_red_wool",
+    	"compactblocksmod:compact_yellow_wool"
+    ]
+}
+

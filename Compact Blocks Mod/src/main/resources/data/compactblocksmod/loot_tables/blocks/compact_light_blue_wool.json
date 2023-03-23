@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "compactblocksmod:compact_light_blue_wool"
+        }
+      ]
+    }
+  ]
+}

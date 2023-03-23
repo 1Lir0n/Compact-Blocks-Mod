@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "compactblocksmod",
+	"version": "${version}",
+	"name": "Compact Blocks Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Liron_"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.liron.compactblocksmod.CompactBlocksMod"
+		],
+		"client":[
+		"net.liron.compactblocksmod.CompactBlocksModClient"
+		]
+	},
+	"mixins": [
+		"compactblocksmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.17",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

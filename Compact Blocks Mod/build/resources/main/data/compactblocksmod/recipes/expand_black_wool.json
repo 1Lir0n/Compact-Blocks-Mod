@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_black_wool"
+        }
+    ],
+    "result": {
+        "item": "minecraft:black_wool",
+        "count": 9
+    },
+    "group": "expand wool"
+
+}

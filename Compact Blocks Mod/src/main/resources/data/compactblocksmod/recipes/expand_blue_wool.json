@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_blue_wool"
+        }
+    ],
+    "result": {
+        "item": "minecraft:blue_wool",
+        "count": 9
+    },
+    "group": "expand wool"
+
+}

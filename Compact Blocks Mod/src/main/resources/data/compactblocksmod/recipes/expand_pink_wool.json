@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_pink_wool"
+        }
+    ],
+    "result": {
+        "item": "minecraft:pink_wool",
+        "count": 9
+    },
+    "group": "expand wool"
+
+}
