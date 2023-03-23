@@ -26,8 +26,8 @@ public class CompactorScreenHandler extends ScreenHandler{
 		this.inventory = inventory;
 		this.propertyDelegate = delegate;
 		
-		this.addSlot(new Slot(inventory,0,12,15));
-		this.addSlot(new Slot(inventory,1,86,15)); 
+		this.addSlot(new Slot(inventory,0,80,17));
+		this.addSlot(new Slot(inventory,1,80,53)); 
 		
 		addPlayerHotbar(playerInventory);
 		addPlayerInventory(playerInventory);

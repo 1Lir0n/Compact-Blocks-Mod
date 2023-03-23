@@ -117,10 +117,10 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	        }
 
 	        if(hasRecipe(entity)) {
-	            entity.removeStack(1, 9);
+	            entity.removeStack(0, 9);
 
-	            entity.setStack(2, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
-	                    entity.getStack(2).getCount() + 1));
+	            entity.setStack(1, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
+	                    entity.getStack(1).getCount() + 1));
 
 	            entity.resetProgress();
 	        }

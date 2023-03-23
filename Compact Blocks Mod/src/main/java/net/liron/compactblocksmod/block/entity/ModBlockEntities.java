@@ -11,7 +11,7 @@ public class ModBlockEntities {
 	public static BlockEntityType<CompactorBlockEntity> COMPACTOR_BLOCK;
 	
 	public static void registerBlockEntities() {
-		COMPACTOR_BLOCK =Registry.register(Registry.BLOCK_ENTITY_TYPE,
+		COMPACTOR_BLOCK = Registry.register(Registry.BLOCK_ENTITY_TYPE,
 				new Identifier(CompactBlocksMod.MOD_ID,"compactor_block") ,
 				FabricBlockEntityTypeBuilder.create(CompactorBlockEntity::new,
 						ModBlocks.COMPACTOR_BLOCK).build(null));
