@@ -29,7 +29,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 55;
 		
 	
 	public CompactorBlockEntity(BlockPos pos, BlockState state) {
@@ -135,7 +135,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 		}
 		
 		boolean hasItemInFirstSlot = entity.getStack(0).getItem() == item;
-		boolean hasEnoughItems = entity.getStack(0).getCount() == 9;
+		boolean hasEnoughItems = entity.getStack(0).getCount() >= 9;
 		return hasItemInFirstSlot && hasEnoughItems && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, item);
 	}
