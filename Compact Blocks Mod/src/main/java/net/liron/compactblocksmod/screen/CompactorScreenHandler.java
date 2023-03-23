@@ -16,19 +16,18 @@ public class CompactorScreenHandler extends ScreenHandler{
 	   private final PropertyDelegate propertyDelegate;
 	    
 	public CompactorScreenHandler(int syncId,PlayerInventory inventory) {
-		this(syncId,inventory,new SimpleInventory(3),new ArrayPropertyDelegate(2));
+		this(syncId,inventory,new SimpleInventory(2),new ArrayPropertyDelegate(2));
 		}
 	
 	public CompactorScreenHandler(int syncId, PlayerInventory playerInventory,Inventory inventory,PropertyDelegate delegate) {
 		super(ModScreenHandlers.COMPACTOR_SCREEN_HANDLER, syncId);
-		checkSize(inventory, 3);
+		checkSize(inventory, 2);
 		inventory.onOpen(playerInventory.player);
 		this.inventory = inventory;
 		this.propertyDelegate = delegate;
 		
 		this.addSlot(new Slot(inventory,0,12,15));
-		this.addSlot(new Slot(inventory,1,86,15));
-		this.addSlot(new Slot(inventory,2,86,60));
+		this.addSlot(new Slot(inventory,1,86,15)); 
 		
 		addPlayerHotbar(playerInventory);
 		addPlayerInventory(playerInventory);

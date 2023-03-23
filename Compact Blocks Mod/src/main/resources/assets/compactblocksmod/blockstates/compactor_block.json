@@ -1,5 +1,20 @@
+
 {
-	"variants": {
-    "": { "model": "compactblocksmod:block/compactor_block" }
+  "variants": {
+    "facing=north": {
+      "model": "compactblocksmod:block/compactor_block"
+    },
+    "facing=south": {
+	  "model": "compactblocksmod:block/compactor_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "compactblocksmod:block/compactor_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "compactblocksmod:block/compactor_block",
+      "y": 90
+    }
   }
 }

@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 public class CompactorBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory{
 
 	private final DefaultedList<ItemStack> inventory = 
-			DefaultedList.ofSize(3, ItemStack.EMPTY);
+			DefaultedList.ofSize(2, ItemStack.EMPTY);
 	
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -134,18 +134,18 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			inventory.setStack(i, entity.getStack(i));
 		}
 		
-		boolean hasItemInFirstSlot = entity.getStack(1).getItem() == item;
-		boolean hasEnoughItems = entity.getStack(1).getCount() == 9;
+		boolean hasItemInFirstSlot = entity.getStack(0).getItem() == item;
+		boolean hasEnoughItems = entity.getStack(0).getCount() == 9;
 		return hasItemInFirstSlot && hasEnoughItems && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, item);
 	}
 	
 	private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
+        return inventory.getStack(1).getItem() == output || inventory.getStack(1).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+        return inventory.getStack(1).getMaxCount() > inventory.getStack(1).getCount();
     }
 
 }
