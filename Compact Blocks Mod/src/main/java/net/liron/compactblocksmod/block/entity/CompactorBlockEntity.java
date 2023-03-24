@@ -1,6 +1,8 @@
 package net.liron.compactblocksmod.block.entity;
 
 
+import com.mojang.brigadier.CommandDispatcher;
+
 import net.liron.compactblocksmod.block.ModBlocks;
 import net.liron.compactblocksmod.screen.CompactorScreenHandler;
 import net.minecraft.block.BlockState;
@@ -15,6 +17,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.command.TellRawCommand;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
@@ -29,7 +32,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 55;
+    private int maxProgress = 18;
 		
 	
 	public CompactorBlockEntity(BlockPos pos, BlockState state) {
@@ -110,6 +113,107 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			
 		}
 	}
+	
+	public static void output(CompactorBlockEntity entity,Item item) {
+		switch (item.toString()) {
+			case "compact_white_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_orange_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_ORANGE_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_magenta_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_MAGENTA_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_light_blue_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIGHT_BLUE_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_yellow_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_YELLOW_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_lime_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIME_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_pink_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_PINK_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_gray_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GRAY_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_light_gray_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIGHT_GRAY_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_cyan_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_CYAN_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_purple_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_PURPLE_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "compact_blue_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BLUE_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_brown_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BROWN_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_green_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GREEN_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_red_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_RED_BLOCK,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+			case "compact_black_wool": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BLACK_WOOL,
+	                    entity.getStack(1).getCount() + 1));
+				
+			}
+        }
+	}
 	 private static void craftItem(CompactorBlockEntity entity) {
 	        SimpleInventory inventory = new SimpleInventory(entity.size());
 	        for (int i = 0; i < entity.size(); i++) {
@@ -118,23 +222,47 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 
 	        if(hasRecipe(entity)) {
 	            entity.removeStack(0, 9);
-
-	            entity.setStack(1, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
-	                    entity.getStack(1).getCount() + 1));
+	            output(entity, item);
 
 	            entity.resetProgress();
 	        }
 	    }
-
-	static Item item = Registry.ITEM.get(new Identifier("white_wool"));
+	static Item[] items = {Registry.ITEM.get(new Identifier("white_wool"))
+			,Registry.ITEM.get(new Identifier("orange_wool"))
+			,Registry.ITEM.get(new Identifier("magenta_wool"))
+			,Registry.ITEM.get(new Identifier("light_blue_wool"))
+			,Registry.ITEM.get(new Identifier("yellow_wool"))
+			,Registry.ITEM.get(new Identifier("lime_wool"))
+			,Registry.ITEM.get(new Identifier("pink_wool"))
+			,Registry.ITEM.get(new Identifier("gray_wool"))
+			,Registry.ITEM.get(new Identifier("light_gray_wool"))
+			,Registry.ITEM.get(new Identifier("cyan_wool"))
+			,Registry.ITEM.get(new Identifier("purple_wool"))
+			,Registry.ITEM.get(new Identifier("blue_wool"))
+			,Registry.ITEM.get(new Identifier("brown_wool"))
+			,Registry.ITEM.get(new Identifier("green_wool"))
+			,Registry.ITEM.get(new Identifier("red_wool"))
+			,Registry.ITEM.get(new Identifier("black_wool"))};
+	static Item item = Registry.ITEM.get(new Identifier("compact_"));
 
 	private static boolean hasRecipe(CompactorBlockEntity entity) {
 		SimpleInventory inventory = new SimpleInventory(entity.size());
 		for(int i =0 ; i< entity.size();i++) {
 			inventory.setStack(i, entity.getStack(i));
 		}
-		
-		boolean hasItemInFirstSlot = entity.getStack(0).getItem() == item;
+		boolean hasItemInFirstSlot = false;
+		String blockString = "compact_";
+		for (Item item : items) {
+			if(!hasItemInFirstSlot)
+				hasItemInFirstSlot = entity.getStack(0).getItem() == item;
+			
+			if(hasItemInFirstSlot) {
+				System.out.println(item.toString());
+				blockString+=Item.getRawId(item);
+				break;
+			}
+		}
+		item = Registry.ITEM.get(new Identifier(blockString));
 		boolean hasEnoughItems = entity.getStack(0).getCount() >= 9;
 		return hasItemInFirstSlot && hasEnoughItems && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, item);
