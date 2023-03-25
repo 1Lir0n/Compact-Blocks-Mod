@@ -26,7 +26,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 
 	private final DefaultedList<ItemStack> inventory = 
 			DefaultedList.ofSize(2, ItemStack.EMPTY);
-	static Item item = Registry.ITEM.get(new Identifier(ModBlocks.COMPACT_WHITE_WOOL.getTranslationKey()));
+	static Item item = Registry.ITEM.get(new Identifier(""));
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -113,7 +113,6 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	}
 	
 	public static void output(CompactorBlockEntity entity,Item item) {
-		System.out.println(item.getTranslationKey());
 		switch (item.getTranslationKey()) {
 			case "block.minecraft.white_wool": {
 				
@@ -213,12 +212,9 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			}
         }
 	}
-	//static String string = ModBlocks.COMPACT_BLACK_WOOL.getTranslationKey();
-	//static String string2 = ModBlocks.COMPACT_BLACK_WOOL.toString();
 
 	
 	private static void craftItem(CompactorBlockEntity entity) {
-			//System.out.println(string);
 	        SimpleInventory inventory = new SimpleInventory(entity.size());
 	        for (int i = 0; i < entity.size(); i++) {
 	            inventory.setStack(i, entity.getStack(i));
@@ -227,7 +223,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	        if(hasRecipe(entity)) {
 	            entity.removeStack(0, 9);
 	            
-	            output(entity, item);
+	            output(entity, entity.getStack(0).getItem());
 
 	            entity.resetProgress();
 	        }
@@ -252,6 +248,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	
 
 	private static boolean hasRecipe(CompactorBlockEntity entity) {
+		
 		SimpleInventory inventory = new SimpleInventory(entity.size());
 		for(int i =0 ; i< entity.size();i++) {
 			inventory.setStack(i, entity.getStack(i));
@@ -276,7 +273,19 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	}
 	
 	private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(1).getItem() == output || inventory.getStack(1).isEmpty();
+		int cnt = 0;
+		String finstr = "";
+		String string=output.getTranslationKey();
+		for (int i = 0; i < string.length(); i++){
+		    if (cnt == 2) { 
+		           finstr += string.charAt(i);
+		    }
+		    else if (string.charAt(i) == '.') {
+		            cnt += 1;
+		    }
+		}
+		finstr="block.compactblocksmod.compact_"+finstr;
+        return inventory.getStack(1).getItem().getTranslationKey() == finstr || inventory.getStack(1).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
