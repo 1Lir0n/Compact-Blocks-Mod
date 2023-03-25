@@ -1,8 +1,6 @@
 package net.liron.compactblocksmod.block.entity;
 
 
-import com.mojang.brigadier.CommandDispatcher;
-
 import net.liron.compactblocksmod.block.ModBlocks;
 import net.liron.compactblocksmod.screen.CompactorScreenHandler;
 import net.minecraft.block.BlockState;
@@ -17,7 +15,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.command.TellRawCommand;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
@@ -29,10 +26,11 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 
 	private final DefaultedList<ItemStack> inventory = 
 			DefaultedList.ofSize(2, ItemStack.EMPTY);
-	
+	static Item item = Registry.ITEM.get(new Identifier(ModBlocks.COMPACT_WHITE_WOOL.getTranslationKey()));
+
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 18;
+    private int maxProgress = 24;
 		
 	
 	public CompactorBlockEntity(BlockPos pos, BlockState state) {
@@ -115,106 +113,112 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	}
 	
 	public static void output(CompactorBlockEntity entity,Item item) {
-		switch (item.toString()) {
-			case "compact_white_wool": {
+		System.out.println(item.getTranslationKey());
+		switch (item.getTranslationKey()) {
+			case "block.minecraft.white_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
 	                    entity.getStack(1).getCount() + 1));
-				
+					break;
 			}
-			case "compact_orange_wool": {
+			case "block.minecraft.orange_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_ORANGE_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_magenta_wool": {
+			case "block.minecraft.magenta_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_MAGENTA_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_light_blue_wool": {
+			case "block.minecraft.light_blue_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIGHT_BLUE_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_yellow_wool": {
+			case "block.minecraft.yellow_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_YELLOW_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_lime_wool": {
+			case "block.minecraft.lime_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIME_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_pink_wool": {
+			case "block.minecraft.pink_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_PINK_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_gray_wool": {
+			case "block.minecraft.gray_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GRAY_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_light_gray_wool": {
+			case "block.minecraft.light_gray_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_LIGHT_GRAY_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_cyan_wool": {
+			case "block.minecraft.cyan_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_CYAN_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_purple_wool": {
+			case "block.minecraft.purple_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_PURPLE_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
 				break;
 			}
-			case "compact_blue_wool": {
+			case "block.minecraft.blue_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BLUE_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_brown_wool": {
+			case "block.minecraft.brown_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BROWN_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_green_wool": {
+			case "block.minecraft.green_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GREEN_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_red_wool": {
+			case "block.minecraft.red_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_RED_BLOCK,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
-			case "compact_black_wool": {
+			case "block.minecraft.black_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_BLACK_WOOL,
 	                    entity.getStack(1).getCount() + 1));
-				
+				break;
 			}
         }
 	}
-	 private static void craftItem(CompactorBlockEntity entity) {
+	//static String string = ModBlocks.COMPACT_BLACK_WOOL.getTranslationKey();
+	//static String string2 = ModBlocks.COMPACT_BLACK_WOOL.toString();
+
+	
+	private static void craftItem(CompactorBlockEntity entity) {
+			//System.out.println(string);
 	        SimpleInventory inventory = new SimpleInventory(entity.size());
 	        for (int i = 0; i < entity.size(); i++) {
 	            inventory.setStack(i, entity.getStack(i));
@@ -222,11 +226,13 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 
 	        if(hasRecipe(entity)) {
 	            entity.removeStack(0, 9);
+	            
 	            output(entity, item);
 
 	            entity.resetProgress();
 	        }
 	    }
+	
 	static Item[] items = {Registry.ITEM.get(new Identifier("white_wool"))
 			,Registry.ITEM.get(new Identifier("orange_wool"))
 			,Registry.ITEM.get(new Identifier("magenta_wool"))
@@ -243,26 +249,27 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			,Registry.ITEM.get(new Identifier("green_wool"))
 			,Registry.ITEM.get(new Identifier("red_wool"))
 			,Registry.ITEM.get(new Identifier("black_wool"))};
-	static Item item = Registry.ITEM.get(new Identifier("compact_"));
+	
 
 	private static boolean hasRecipe(CompactorBlockEntity entity) {
 		SimpleInventory inventory = new SimpleInventory(entity.size());
 		for(int i =0 ; i< entity.size();i++) {
 			inventory.setStack(i, entity.getStack(i));
 		}
-		boolean hasItemInFirstSlot = false;
-		String blockString = "compact_";
+		
+		
+		boolean hasItemInFirstSlot = entity.getStack(0).getItem() == items[0];
+		
 		for (Item item : items) {
+			
 			if(!hasItemInFirstSlot)
 				hasItemInFirstSlot = entity.getStack(0).getItem() == item;
 			
-			if(hasItemInFirstSlot) {
-				System.out.println(item.toString());
-				blockString+=Item.getRawId(item);
+			else {
+				CompactorBlockEntity.item = item;
 				break;
 			}
 		}
-		item = Registry.ITEM.get(new Identifier(blockString));
 		boolean hasEnoughItems = entity.getStack(0).getCount() >= 9;
 		return hasItemInFirstSlot && hasEnoughItems && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, item);
