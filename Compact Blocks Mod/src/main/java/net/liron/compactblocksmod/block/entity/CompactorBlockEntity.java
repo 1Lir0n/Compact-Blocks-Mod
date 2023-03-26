@@ -114,6 +114,12 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	
 	public static void output(CompactorBlockEntity entity,Item item) {
 		switch (item.getTranslationKey()) {
+			case "block.minecraft.stone": {
+			
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_STONE_BLOCK,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
 			case "block.minecraft.white_wool": {
 				
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_WHITE_WOOL,
@@ -262,7 +268,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			if(!hasItemInFirstSlot)
 				hasItemInFirstSlot = entity.getStack(0).getItem() == item;
 			
-			else {
+			if(hasItemInFirstSlot) {
 				CompactorBlockEntity.item = item;
 				break;
 			}
@@ -285,7 +291,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 		    }
 		}
 		finstr="block.compactblocksmod.compact_"+finstr;
-        return inventory.getStack(1).getItem().getTranslationKey() == finstr || inventory.getStack(1).isEmpty();
+        return inventory.getStack(1).getItem().getTranslationKey().equals(finstr) || inventory.getStack(1).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {

@@ -22,6 +22,12 @@ public class ModBlocks {
 			new CompactorBlock(FabricBlockSettings.of(Material.GLASS).strength(2f).requiresTool().nonOpaque())
 			,ModItemGroup.COMPACTBLOCKS);
 	
+	
+	public static final Block COMPACT_STONE_BLOCK = registerBlock("compact_stone_block",
+			new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
+			,ModItemGroup.COMPACTBLOCKS);
+	
+	
 	//add all the wool types to compacted wools
 	public static final Block COMPACT_WHITE_WOOL = registerBlock("compact_white_wool",
 			new Block(FabricBlockSettings.of(Material.WOOL).strength(0.8f).sounds(net.minecraft.sound.BlockSoundGroup.WOOL))
