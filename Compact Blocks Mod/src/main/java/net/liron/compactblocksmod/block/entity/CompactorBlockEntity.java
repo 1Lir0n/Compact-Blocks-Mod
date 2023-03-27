@@ -116,7 +116,7 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 		switch (item.getTranslationKey()) {
 			case "block.minecraft.stone": {
 			
-				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_STONE_BLOCK,
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_STONE,
 						entity.getStack(1).getCount() + 1));
 				break;
 			}
@@ -250,7 +250,8 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			,Registry.ITEM.get(new Identifier("brown_wool"))
 			,Registry.ITEM.get(new Identifier("green_wool"))
 			,Registry.ITEM.get(new Identifier("red_wool"))
-			,Registry.ITEM.get(new Identifier("black_wool"))};
+			,Registry.ITEM.get(new Identifier("black_wool"))
+			,Registry.ITEM.get(new Identifier("stone"))};
 	
 
 	private static boolean hasRecipe(CompactorBlockEntity entity) {
@@ -291,6 +292,8 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 		    }
 		}
 		finstr="block.compactblocksmod.compact_"+finstr;
+		System.out.println("$"+finstr);
+		System.out.println("#"+inventory.getStack(1).getItem().getTranslationKey());
         return inventory.getStack(1).getItem().getTranslationKey().equals(finstr) || inventory.getStack(1).isEmpty();
     }
 

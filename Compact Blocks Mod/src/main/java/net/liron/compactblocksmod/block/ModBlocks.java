@@ -23,7 +23,7 @@ public class ModBlocks {
 			,ModItemGroup.COMPACTBLOCKS);
 	
 	
-	public static final Block COMPACT_STONE_BLOCK = registerBlock("compact_stone_block",
+	public static final Block COMPACT_STONE = registerBlock("compact_stone",
 			new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
 			,ModItemGroup.COMPACTBLOCKS);
 	

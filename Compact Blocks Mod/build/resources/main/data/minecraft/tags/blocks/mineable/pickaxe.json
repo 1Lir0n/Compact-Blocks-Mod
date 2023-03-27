@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "compactblocksmod:compactor_block"
+    "compactblocksmod:compactor_block",
+    "compactblocksmod:compact_stone"
   ]
 }
