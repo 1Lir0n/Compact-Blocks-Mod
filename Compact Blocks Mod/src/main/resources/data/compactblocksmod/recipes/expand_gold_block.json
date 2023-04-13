@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_gold_block"
+        }
+    ],
+    "result": {
+        "item": "minecraft:gold_block",
+        "count": 9
+    }
+
+}

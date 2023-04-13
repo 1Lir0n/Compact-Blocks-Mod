@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-		"compactblocksmod:compactor_block"
+		"compactblocksmod:compactor_block",
+		"compactblocksmod:compact_iron_block",
+    	"compactblocksmod:compact_gold_block",
+    	"compactblocksmod:compact_emerald_block"
   ]
 }

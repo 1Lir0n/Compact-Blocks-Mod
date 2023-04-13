@@ -1,7 +1,17 @@
 {
     "block.compactblocksmod.compactor_block":"Compactor",
     
+    "block.compactblocksmod.compact_dirt":"Compact Dirt",
+    
     "block.compactblocksmod.compact_stone":"Compact Stone",
+    "block.compactblocksmod.compact_cobblestone":"Compact Cobblestone",
+    "block.compactblocksmod.compact_andesite":"Compact Andesite",
+    "block.compactblocksmod.compact_granite":"Compact Granite",
+    "block.compactblocksmod.compact_diorite":"Compact Diorite",
+    
+    "block.compactblocksmod.compact_iron_block":"Compact Iron Block",
+    "block.compactblocksmod.compact_gold_block":"Compact Gold Block",
+    "block.compactblocksmod.compact_emerald_block":"Compact Emerald Block",
     
 	"block.compactblocksmod.compact_white_wool":"Compact White Wool",
 	"block.compactblocksmod.compact_black_wool":"Compact Black Wool",

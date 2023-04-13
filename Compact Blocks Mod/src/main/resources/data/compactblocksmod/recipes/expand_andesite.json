@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "compactblocksmod:compact_andesite"
+        }
+    ],
+    "result": {
+        "item": "minecraft:andesite",
+        "count": 9
+    }
+
+}

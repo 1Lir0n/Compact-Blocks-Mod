@@ -114,9 +114,58 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 	
 	public static void output(CompactorBlockEntity entity,Item item) {
 		switch (item.getTranslationKey()) {
+		
+			case "block.minecraft.dirt": {
+			
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_DIRT,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
 			case "block.minecraft.stone": {
 			
 				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_STONE,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.cobblestone": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_COBBLESTONE,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.andesite": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_ANDESITE,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.granite": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GRANITE,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.diorite": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_DIORITE,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.iron_block": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_IRON_BLOCK,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.gold_block": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_GOLD_BLOCK,
+						entity.getStack(1).getCount() + 1));
+				break;
+			}
+			case "block.minecraft.emerald_block": {
+				
+				entity.setStack(1, new ItemStack(ModBlocks.COMPACT_EMERALD_BLOCK,
 						entity.getStack(1).getCount() + 1));
 				break;
 			}
@@ -251,6 +300,14 @@ public class CompactorBlockEntity extends BlockEntity implements NamedScreenHand
 			,Registry.ITEM.get(new Identifier("green_wool"))
 			,Registry.ITEM.get(new Identifier("red_wool"))
 			,Registry.ITEM.get(new Identifier("black_wool"))
+			,Registry.ITEM.get(new Identifier("dirt"))
+			,Registry.ITEM.get(new Identifier("cobblestone"))
+			,Registry.ITEM.get(new Identifier("andesite"))
+			,Registry.ITEM.get(new Identifier("diorite"))
+			,Registry.ITEM.get(new Identifier("granite"))
+			,Registry.ITEM.get(new Identifier("iron_block"))
+			,Registry.ITEM.get(new Identifier("gold_block"))
+			,Registry.ITEM.get(new Identifier("emerald_block"))
 			,Registry.ITEM.get(new Identifier("stone"))};
 	
 
