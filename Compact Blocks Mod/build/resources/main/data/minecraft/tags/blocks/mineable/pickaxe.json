@@ -2,6 +2,13 @@
   "replace": false,
   "values": [
     "compactblocksmod:compactor_block",
-    "compactblocksmod:compact_stone"
+    "compactblocksmod:compact_stone",
+    "compactblocksmod:compact_cobblestone",
+    "compactblocksmod:compact_andesite",
+    "compactblocksmod:compact_granite",
+    "compactblocksmod:compact_diorite",
+    "compactblocksmod:compact_iron_block",
+    "compactblocksmod:compact_gold_block",
+    "compactblocksmod:compact_emerald_block"
   ]
 }

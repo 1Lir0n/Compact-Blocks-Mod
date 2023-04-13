@@ -1,6 +1,10 @@
 {
 	"replace": false,
   	"values": [
-		
+		"compactblocksmod:compact_stone",
+    	"compactblocksmod:compact_cobblestone",
+    	"compactblocksmod:compact_andesite",
+    	"compactblocksmod:compact_granite",
+    	"compactblocksmod:compact_diorite"
   	]
 }
