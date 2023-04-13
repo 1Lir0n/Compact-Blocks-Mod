@@ -22,16 +22,18 @@ public class ModBlocks {
 			new CompactorBlock(FabricBlockSettings.of(Material.GLASS).strength(2f).requiresTool().nonOpaque())
 			,ModItemGroup.COMPACTBLOCKS);
 	
+	//adds the dirt block types
 	public static final Block COMPACT_DIRT = registerBlock("compact_dirt",
-			new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.GRASS))
+			new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.5f).sounds(net.minecraft.sound.BlockSoundGroup.GRASS))
 			,ModItemGroup.COMPACTBLOCKS);
 	
+	//adds the stone block types
 	public static final Block COMPACT_STONE = registerBlock("compact_stone",
 			new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
 			,ModItemGroup.COMPACTBLOCKS);
 	
 	public static final Block COMPACT_COBBLESTONE = registerBlock("compact_cobblestone",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
+			new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
 			,ModItemGroup.COMPACTBLOCKS);
 	
 	public static final Block COMPACT_ANDESITE = registerBlock("compact_andesite",
@@ -46,19 +48,20 @@ public class ModBlocks {
 			new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.STONE))
 			,ModItemGroup.COMPACTBLOCKS);
 	
+	//adds the mineral block types
 	public static final Block COMPACT_IRON_BLOCK = registerBlock("compact_iron_block",
-			new Block(FabricBlockSettings.of(Material.METAL).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
+			new Block(FabricBlockSettings.of(Material.METAL).strength(5.0f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
 			,ModItemGroup.COMPACTBLOCKS);
 	
 	public static final Block COMPACT_GOLD_BLOCK = registerBlock("compact_gold_block",
-			new Block(FabricBlockSettings.of(Material.METAL).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
+			new Block(FabricBlockSettings.of(Material.METAL).strength(3.0f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
 			,ModItemGroup.COMPACTBLOCKS);
 	
 	public static final Block COMPACT_EMERALD_BLOCK = registerBlock("compact_emerald_block",
-			new Block(FabricBlockSettings.of(Material.METAL).strength(1.5f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
+			new Block(FabricBlockSettings.of(Material.METAL).strength(5.0f).sounds(net.minecraft.sound.BlockSoundGroup.METAL))
 			,ModItemGroup.COMPACTBLOCKS);
 	
-	//add all the wool types to compacted wools
+	//adds all the wool types
 	public static final Block COMPACT_WHITE_WOOL = registerBlock("compact_white_wool",
 			new Block(FabricBlockSettings.of(Material.WOOL).strength(0.8f).sounds(net.minecraft.sound.BlockSoundGroup.WOOL))
 			,ModItemGroup.COMPACTBLOCKS);
